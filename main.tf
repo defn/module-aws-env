@@ -27,17 +27,3 @@ module "per_az" {
 
   nat_cidrs = "${var.nat_cidrs}"
 }
-
-resource "aws_s3_bucket" "remote_state" {
-  bucket = "${var.bucket_remote_state}"
-  acl = "private"
-
-  versioning {
-    enabled = true
-  }
-
-  tags {
-    "Vpc" = "${var.vpc_name}"
-    "Provisioner" = "tf"
-  }
-}
