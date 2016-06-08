@@ -8,4 +8,5 @@ variable "az_names" {}
 
 variable "nat_cidrs" {}
 
+variable "context_org" {}
 variable "bucket_remote_state" {}
