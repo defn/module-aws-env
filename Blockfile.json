@@ -1,6 +1,5 @@
 {
   "require": [
-    "module-aws-vpc",
-    "module-aws-per_az"
+    "module-aws-vpc"
   ]
 }
