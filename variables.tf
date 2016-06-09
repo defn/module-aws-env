@@ -1,12 +1,11 @@
 variable "provider_region" {}
+variable "bucket_remote_state" {}
+variable "context_org" {}
+variable "context_env" {}
+
+variable "az_count" {}
 
 variable "vpc_cidr" {}
 variable "vpc_name" {}
 
-variable "az_count" {}
-variable "az_names" {}
-
 variable "nat_cidrs" {}
-
-variable "context_org" {}
-variable "bucket_remote_state" {}
