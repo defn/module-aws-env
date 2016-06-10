@@ -7,5 +7,3 @@ variable "az_count" {}
 
 variable "vpc_cidr" {}
 variable "vpc_name" {}
-
-variable "nat_cidrs" {}
