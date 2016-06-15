@@ -1,5 +1,4 @@
-provider "aws" {
-}
+provider "aws" { }
 
 resource "terraform_remote_state" "global" {
   backend = "s3"
@@ -14,4 +13,8 @@ module "vpc" {
 
   vpc_name = "${var.vpc_name}"
   vpc_cidr = "${var.vpc_cidr}"
+}
+
+output "vpc_id" {
+  value = "${module.vpc.vpc_id}"
 }
