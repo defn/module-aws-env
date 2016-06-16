@@ -1,6 +1,6 @@
 provider "aws" { }
 
-resource "terraform_remote_state" "global" {
+data "terraform_remote_state" "global" {
   backend = "s3"
   config {
     bucket = "${var.bucket_remote_state}"
