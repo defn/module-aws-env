@@ -18,3 +18,7 @@ module "vpc" {
 output "vpc_id" {
   value = "${module.vpc.vpc_id}"
 }
+
+output "vpc_net16" {
+  value = "${join(".",concat(element(split(".",module.vpc.vpc_cidr),0),element(split(".",module.vpc.vpc_cidr),1)))}"
+}
