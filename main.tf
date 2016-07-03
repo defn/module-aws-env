@@ -9,7 +9,7 @@ module "vpc" {
 
 resource "aws_sqs_queue" "asg_queue" {
   name = "${var.vpc_name}-asg-queue"
-  policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"${var.vpc_name}-asg-enqueue\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::${data.terraform_remote_state.global.account_id{:root\"},\"Action\":\"SQS:SendMessage\",\"Resource\":\"arn:aws:sqs:${data.terraform_remote_state.aws_region}:${data.terraform_remote_state.global.account_id{:${var.vpc_name}-asg-queue\"}]}"
+  policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"${var.vpc_name}-asg-enqueue\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::${data.terraform_remote_state.global.aws_account_id}:root\"},\"Action\":\"SQS:SendMessage\",\"Resource\":\"arn:aws:sqs:${data.terraform_remote_state.global.aws_region}:${data.terraform_remote_state.global.aws_account_id}:${var.vpc_name}-asg-queue\"}]}"
 }
 
 output "vpc_id" {
