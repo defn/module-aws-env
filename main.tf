@@ -36,3 +36,7 @@ output "asg_id" {
 output "asg_arn" {
   value = "${aws_sqs_queue.asg_queue.arn}"
 }
+
+output "zone_id" {
+  value = "${module.vpc.zone_id}"
+}
