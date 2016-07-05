@@ -17,6 +17,10 @@ resource "aws_sqs_queue" "asg_queue" {
   policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"${var.vpc_name}-asg-enqueue\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::${data.terraform_remote_state.global.aws_account_id}:root\"},\"Action\":\"SQS:SendMessage\",\"Resource\":\"arn:aws:sqs:${data.terraform_remote_state.global.aws_region}:${data.terraform_remote_state.global.aws_account_id}:${var.vpc_name}-asg-queue\"}]}"
 }
 
+output "igw" {
+  value = "${module.vpc.igw}"
+}
+
 output "vpc_zone" {
   value = "${module.vpc.vpc_zone}"
 }
